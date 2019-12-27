@@ -1,12 +1,13 @@
 # ELAM
 A Practical example of ELAM (Early Launch Anti-Malware)
 
+The ELAM feature provides a Microsoft-supported mechanism for antimalware (AM) software to start before other third-party components. AM drivers are initialized first and allowed to control the initialization of subsequent boot drivers, potentially not initializing unknown boot drivers. Once the boot process has initialized boot drivers and access to persistent storage is available in an efficient way, existing AM software may continue to block malware from executing. (Microsoft)
 
 Here is a practical example of Microsoft ELAM. It's based on a code available on https://github.com/microsoft/Windows-driver-samples/tree/master/security/elam.
 
 I added some simple code to the microsoft sample code in order to prevent loading a drive or running a service with a specific name in boot-time.
 
-
+[![A Practical example of ELAM](http://img.youtube.com/vi/G_NgjZlr4e8/0.jpg)](http://www.youtube.com/watch?v=G_NgjZlr4e8 "A Practical example of ELAM")
 
 **Useful commands**
 ```
