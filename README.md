@@ -13,7 +13,7 @@ I added some simple code to the microsoft sample code in order to prevent loadin
 ```
 "C:\Program Files (x86)\Windows Kits\10\bin\x64\makecert.exe" -a SHA256 -r -pe -ss PrivateCertStore -n "CN=MyElamCert" -eku 1.3.6.1.4.1.311.61.4.1,1.3.6.1.5.5.7.3.3 -sr localmachine C:\ELAM\x64\Debug\MyElamCert.cer
 
-"C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe"  sign /fd SHA256 /a /v /ph /debug /s "PrivateCertStore" /n "MyElamCert" /t http://timestamp.verisign.com/scripts/timestamp.dll elamsample.sys
+"C:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe"  sign /fd SHA256 /a /v /ph /debug /s "PrivateCertStore" /n "MyElamCert" /tr http://sha256timestamp.ws.symantec.com/sha256/timestamp elamsample.sys
 
 sc create ElamSample binpath=%windir%\\system32\\drivers\\elamsample.sys type=kernel start=boot error=critical group=Early-Launch
 
